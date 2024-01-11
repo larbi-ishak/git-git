@@ -1,5 +1,6 @@
 
 const consumeCommits = (dates) => {
+  //creating a promise
     return new Promise((resolve,reject)=>{
         console.log("dates", dates)
     const total_commits = dates.length

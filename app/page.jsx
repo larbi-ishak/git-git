@@ -73,13 +73,16 @@ export default function Home() {
     
 
   }
+  //converting the cosmic object into keys
   const keys=Object.keys(cosmic)
   let labels=[]
   let counts=[]
+  //retrieving the number of commits'counts' and months 'labels' 
   keys&&keys.forEach((key,index)=>{
     counts.push(cosmic[key].count)
     labels.push(index+1)
   })
+  //set the data object for the charjs library
    const data = {
     labels,
     datasets: [
