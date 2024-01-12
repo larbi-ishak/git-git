@@ -22,23 +22,21 @@ ChartJS.register(
   Legend
 );
 
-export const options = {
-  responsive: true,
-  plugins: {
-    legend: {
-      position: 'top',
+
+
+export function Chartcomp({ data, repo }) {
+  const options = {
+    responsive: true,
+    plugins: {
+      legend: {
+        position: 'top',
+      },
+      title: {
+        display: true,
+        text: repo ? repo : "github repo"
+      },
     },
-    title: {
-      display: true,
-      text: 'your github repo history',
-    },
-  },
-};
+  };
 
-
-
-
-
-export function Chartcomp({don}) {
-  return <Line options={options} data={don} />;
+  return <Line options={options} data={data} />
 }

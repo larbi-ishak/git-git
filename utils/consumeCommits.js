@@ -1,14 +1,14 @@
 
 const consumeCommits = (dates) => {
   //creating a promise
-    return new Promise((resolve,reject)=>{
-        console.log("dates", dates)
+  return new Promise((resolve, reject) => {
+    console.log("dates", dates)
     const total_commits = dates.length
     const first_commit = dates[dates.length - 1]
     const last_commit = dates[0]
 
-    console.log("first commit", first_commit)
-    console.log("last commit", last_commit)
+    // console.log("first commit", first_commit)
+    // console.log("last commit", last_commit)
 
     const convertUnit = 1000 * 60 * 60 * 24 // ms * second * minute * hour  a day
     const days_number_between_last_first = Math.floor((last_commit - first_commit) / convertUnit)
@@ -73,10 +73,10 @@ const consumeCommits = (dates) => {
       months[month].count += 1
     })
     console.log(months)
-    console.log((months[7].count / total_commits * 100).toFixed(2), "%")
-    resolve(months)
-    })
-   
-  }
 
-  export default consumeCommits
+    resolve(months)
+  })
+
+}
+
+export default consumeCommits
