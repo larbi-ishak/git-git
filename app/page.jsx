@@ -27,9 +27,13 @@ export default function Home() {
     const res = await octokit.request(`GET https://api.github.com/repos/${owner_and_repo}/commits`, {
       headers: {
         'X-GitHub-Api-Version': `2022-11-28`
-      }
+      },
+      since: '2021-01-01T00:00:00Z',
+      // unitl: '2021-12-31T23:59:59Z',
+      per_page: 100, // max commits per page
+      page: 800, // 800th page HACK: we should use pagination instead
     }).then(res => {
-
+      console.log("res", res)
       res.data.forEach((other) => {
         let date = new Date(other?.commit?.author?.date)
         dates.push(date)
