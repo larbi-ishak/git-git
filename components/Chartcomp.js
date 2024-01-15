@@ -38,5 +38,5 @@ export function Chartcomp({ data, repo }) {
     },
   };
 
-  return <Line options={options} data={data} />
+  return <Line id='my-element' options={options} data={data} />
 }
