@@ -33,10 +33,11 @@ export function Chartcomp({ data, repo }) {
       },
       title: {
         display: true,
-        text: repo ? repo : "github repo"
+        text: repo ? repo : "github repo",
+        fontSize: 20,
       },
     },
   };
 
-  return <Line id='my-element' options={options} data={data} />
+  return <Line options={options} data={data} id='my-chart' />
 }
